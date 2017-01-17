@@ -1,20 +1,21 @@
 package hei.tp03.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by pic on 17/01/2017.
  */
+@Entity
 public class Produit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column
     private String nom;
-    
+
+    @ManyToOne
     private Commande commande;
 
     public Produit() {}
@@ -23,6 +24,10 @@ public class Produit {
     {
         this.nom = nom;
         this.commande = commande;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getNom() {

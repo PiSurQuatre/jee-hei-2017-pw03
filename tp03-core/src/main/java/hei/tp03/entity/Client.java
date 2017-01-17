@@ -1,9 +1,7 @@
 package hei.tp03.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by pic on 17/01/2017.
@@ -18,6 +16,9 @@ public class Client {
     private String nom;
 
     private String prenom;
+
+    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "client")
+    private List<Commande> commandes;
 
     public Client(){}
 
@@ -41,5 +42,17 @@ public class Client {
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public List<Commande> getCommandes() {
+        return commandes;
+    }
+
+    public void setCommandes(List<Commande> commandes) {
+        this.commandes = commandes;
     }
 }

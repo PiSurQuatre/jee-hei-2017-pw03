@@ -1,23 +1,25 @@
 package hei.tp03.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 /**
  * Created by pic on 17/01/2017.
  */
+@Entity
 public class Commande {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column
     private Boolean validee;
 
+    @ManyToOne
     private Client client;
 
+    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "commande")
     private List<Produit> produits;
 
     public Commande() {}
@@ -49,5 +51,9 @@ public class Commande {
 
     public void setProduits(List<Produit> produits) {
         this.produits = produits;
+    }
+
+    public long getId() {
+        return id;
     }
 }
