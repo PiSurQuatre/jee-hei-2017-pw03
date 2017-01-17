@@ -12,7 +12,8 @@
     <modules>
         <module>tp03-core</module>
         <module>tp03-app</module>
-        
+        <module>tp03-web</module>
+
     </modules>
 
     <properties>
