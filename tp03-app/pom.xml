@@ -13,12 +13,12 @@
 
 
     <dependencies>
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>tp03-core</artifactId>
             <version>${project.version}</version>
         </dependency>
-
 
     </dependencies>
 
