@@ -1,5 +1,7 @@
 package hei.tp03.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -17,6 +19,7 @@ public class Client {
 
     private String prenom;
 
+    @JsonIgnore
     @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "client")
     private List<Commande> commandes;
 
