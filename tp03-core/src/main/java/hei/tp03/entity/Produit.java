@@ -6,11 +6,7 @@ import javax.persistence.*;
  * Created by pic on 17/01/2017.
  */
 @Entity
-public class Produit {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+public class Produit extends Identite {
 
     @Column
     private String nom;
@@ -24,10 +20,6 @@ public class Produit {
     {
         this.nom = nom;
         this.commande = commande;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public String getNom() {

@@ -9,11 +9,7 @@ import java.util.List;
  * Created by pic on 17/01/2017.
  */
 @Entity
-public class Client {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+public class Client extends Identite{
 
     private String nom;
 
@@ -45,10 +41,6 @@ public class Client {
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public List<Commande> getCommandes() {

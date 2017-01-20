@@ -7,11 +7,7 @@ import java.util.List;
  * Created by pic on 17/01/2017.
  */
 @Entity
-public class Commande {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+public class Commande extends Identite{
 
     @Column
     private Boolean validee;
@@ -51,9 +47,5 @@ public class Commande {
 
     public void setProduits(List<Produit> produits) {
         this.produits = produits;
-    }
-
-    public long getId() {
-        return id;
     }
 }
