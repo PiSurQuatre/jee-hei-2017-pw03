@@ -12,6 +12,7 @@ import java.util.List;
 @Named
 @Transactional
 public class ClientServiceImpl implements ClientService {
+
     @Inject
     private ClientDAO clientDAO;
 
@@ -29,4 +30,6 @@ public class ClientServiceImpl implements ClientService {
     public List<Client> findAll() {
         return clientDAO.findAll();
     }
+
+
 }
