@@ -1,7 +1,5 @@
 package hei.tp03.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 @Entity
