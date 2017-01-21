@@ -1,10 +1,9 @@
 package hei.tp03.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
-/**
- * Created by pic on 17/01/2017.
- */
 @Entity
 public class Produit extends Identite {
 

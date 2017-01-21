@@ -5,9 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by pic on 17/01/2017.
- */
 @Entity
 public class Client extends Identite{
 
@@ -15,8 +12,7 @@ public class Client extends Identite{
 
     private String prenom;
 
-    @JsonIgnore
-    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "client")
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, mappedBy = "client")
     private List<Commande> commandes;
 
     public Client(){}

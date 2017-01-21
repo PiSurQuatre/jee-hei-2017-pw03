@@ -1,11 +1,10 @@
 package hei.tp03.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by pic on 17/01/2017.
- */
 @Entity
 public class Commande extends Identite{
 
@@ -15,7 +14,7 @@ public class Commande extends Identite{
     @ManyToOne
     private Client client;
 
-    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "commande")
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, mappedBy = "commande")
     private List<Produit> produits;
 
     public Commande() {}
